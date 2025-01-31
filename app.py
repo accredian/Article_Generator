@@ -162,9 +162,10 @@ if st.button("Generate Article"):
                 # Read and display the article from the file
                 with open("Final_Article.txt", "r") as file:
                     Final_Article = file.read()
+                    cleaned_output = str(Final_Article).strip().replace("```", "").strip()
 
                 st.subheader("Final Article")
-                st.markdown(Final_Article)
+                st.markdown(cleaned_output)
 
                 # Download button
                 st.download_button(label="Download Final Article", data=Final_Article, 
