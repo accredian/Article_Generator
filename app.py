@@ -162,7 +162,7 @@ if st.button("Generate Article"):
                 # Read and display the article from the file
                 with open("Final_Article.txt", "r") as file:
                     Final_Article = file.read()
-                    cleaned_output = str(Final_Article).strip().replace("```", "").strip()
+                    cleaned_output = str(Final_Article).strip().replace("markdown ```", "").strip()
 
                 st.subheader("Final Article")
                 st.markdown(cleaned_output)
