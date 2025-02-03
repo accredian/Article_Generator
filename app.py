@@ -132,7 +132,7 @@ if os.environ["SERPER_API_KEY"] and os.environ['OPENAI_API_KEY']:
         description=("Proofread the given blog post for "
                      "grammatical errors, checks plagiarism and "
                      "alignment with the brand's voice."),
-        expected_output="A well-written blog post in markdown format, "
+        expected_output="A well-written blog post, "
                         "ready for publication, "
                         "each section should have 2 or 3 paragraphs.",
         tools=[SerperDevTool, ScrapeWebsiteTool],
@@ -168,7 +168,7 @@ if st.button("Generate Article"):
                 st.markdown(cleaned_output)
 
                 # Download button
-                st.download_button(label="Download Final Article", data=Final_Article, 
+                st.download_button(label="Download Final Article", data=cleaned_output, 
                                    file_name="Final_Article.txt", mime="text/plain")
             else:
                 st.error("Failed to generate the article. Please try again.")
